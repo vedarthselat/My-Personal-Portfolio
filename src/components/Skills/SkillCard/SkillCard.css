@@ -1,0 +1,101 @@
+@keyframes mainSkillsBorderColorChange {
+  0%, 35% {
+    border-color: #8467fa;
+  }
+  90%, 100% {
+    border-color: aqua;
+  }
+}
+
+@keyframes mainSkillswBackgroundColorChange {
+  0%, 35% {
+    background: #6a53c6;
+  }
+  90%, 100% {
+    background: rgb(0, 203, 203);
+  }
+}
+
+img{
+  color:black;
+}
+
+
+
+
+.skills-card {
+  color:black;
+  border-radius: 0.65rem;
+  border: 1.5px solid #6751b9;
+  animation: mainSkillsBorderColorChange 7s infinite alternate;
+  padding: 2.5rem;
+  text-align: center;
+  background: linear-gradient(45deg, #8e44ad, #3498db);
+
+  /* background: rgb(168, 168, 168); */
+  backdrop-filter: blur(1rem);
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  min-height:8.2em;
+}
+
+.skills-card:hover,
+.skills-card.active {
+  /* background: linear-gradient(180deg, #000000 0%, grey 100%); */
+  background:black;
+  color:white;
+}
+
+.skills-card span {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.skill-icon {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:#4d31bf;
+  
+  border-radius: 0.65rem;
+  border: 1.5px solid #6852ba;
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  animation: mainSkillswBackgroundColorChange 7s infinite alternate, mainSkillsBorderColorChange 7s infinite alternate;
+}
+
+.skill-icon img {
+  width: 2.4rem;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 1025px) {
+  .skills-card {
+    padding: 2rem;
+  }
+  .skills-card span {
+    font-size: 1rem;
+  }
+  .skill-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .skill-icon img {
+    width: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-card span {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,126 @@
+@keyframes mainSkillsBorderColorChange {
+  0%, 35% {
+    border-color: #8467fa;
+  }
+  90%, 100% {
+    border-color: aqua;
+  }
+}
+
+@keyframes mainSkillsBorderBottomColorChange {
+  0%, 35% {
+    border-bottom-color: #8467fa;
+  }
+  90%, 100% {
+    border-bottom-color: aqua;
+  }
+}
+@keyframes mainSkillCardColorChange {
+  0%, 35% {
+    color: #8467fa;
+  }
+  90%, 100% {
+    color: aqua;
+  }
+}
+
+@keyframes mainSkillsInfoBackgroundColorChange {
+  0%, 35% {
+    background: #7958ff;
+  }
+  90%, 100% {
+    background: rgb(0, 240, 240);
+  }
+}
+@keyframes mainSkillsInfoSideBackgroundColorChange {
+  0%, 35% {
+    background: #20183e;
+  }
+  90%, 100% {
+    background: rgb(0, 60, 60);
+  }
+}
+
+.skills-info-card {
+  min-height: 23rem;
+  border-radius: 0.65rem;
+  border: 1.5px solid #6751b9;
+  animation: mainSkillsBorderColorChange 7s infinite alternate;
+  background: rgba(22, 17, 47, 0.398);
+  backdrop-filter: blur(1rem);
+}
+
+.skills-info-card h6 {
+  color: white; /* Initial color */
+   /* Use the animation here */
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 0.8rem 2rem;
+  
+  border-bottom: 1.5px solid #6751b9;
+  animation: mainSkillsBorderBottomColorChange 7s infinite alternate, mainSkillCardColorChange 7s infinite alternate;;
+}
+
+
+.skills-info-content {
+  padding: 2rem;
+}
+
+.skill-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.skill-info p {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.skill-info .percentage {
+  color: #dd8cfa;
+}
+
+.skill-progress-bg {
+  width: 100%;
+  height: 0.5rem;
+  background: linear-gradient(45deg, #482358, #1a4b6c);
+  /* animation: mainSkillsInfoSideBackgroundColorChange 7s infinite alternate; */
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+  overflow: hidden;
+}
+
+:root {
+  --animation-offset: 0s;
+}
+
+.skill-progress {
+  width: 0%;
+  height: 0.5rem;
+  background: linear-gradient(90deg, #cfcfcf -50%, #bababa 50%);
+  
+
+  border-radius: 0.5rem;
+  transition: all 0.5s ease-in-out;
+}
+
+
+
+@media (max-width: 1025px) {
+  .skills-info-card h6 {
+    font-size: 1.1rem;
+  }
+
+  .skill-info p {
+    font-size: 0.85rem;
+  }
+
+  .skills-info-content {
+    padding: 1.5rem;
+  }
+
+  .skill-progress-bg, .skill-progress {
+    height: 0.3rem;
+  }
+}

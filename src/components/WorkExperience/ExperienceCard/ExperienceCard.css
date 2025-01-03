@@ -1,0 +1,92 @@
+@keyframes mainExpBorderColorChange {
+  0%, 35% {
+    border-color: #8467fa;
+  }
+  90%, 100% {
+    border-color: aqua;
+  }
+}
+
+@keyframes mainExpBackgroundTimeColorChange {
+  0%, 35% {
+    background-color: #4a3a8b;
+  }
+  90%, 100% {
+    background-color: rgb(0, 188, 188);
+  }
+}
+@keyframes mainExpBackgroundDarkColorChange {
+  0%, 35% {
+    background: #1a1432;
+  }
+  90%, 100% {
+    background: rgb(0, 25, 25);
+  }
+}
+
+
+.work-experience-card {
+  background: #130f2a;
+  border-radius: 0.65rem;
+  border: 1.5px solid #6751b9;
+  padding: 1.5rem;
+  margin: 0 1rem;
+
+  /* Combine both animations */
+  animation: 
+    mainExpBackgroundDarkColorChange 7s infinite alternate, 
+    mainExpBorderColorChange 7s infinite alternate;
+}
+
+
+.work-experience-card h6 {
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin-bottom: 0.7rem;
+}
+
+.work-duration {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 400;
+  background: rgba(103, 81, 185, 0.5);
+  animation: mainExpBackgroundTimeColorChange 7s infinite alternate;
+  border-radius: 0.3rem;
+  padding: 0.4rem 0.6rem;
+  margin-bottom: 1.3rem;
+}
+
+.work-experience-card ul li {
+  list-style: none;
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.work-experience-card ul li::after {
+  content: " ";
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #6751b9;
+  animation: 
+  mainExpBackgroundTimeColorChange 7s infinite alternate;
+  border-radius: 0.5rem;
+  position: absolute;
+  left: -1.3rem;
+  top: 0.35rem;
+}
+
+@media (max-width: 768px) {
+  .work-experience-card {
+    margin: 0;
+  }
+
+  .work-experience-card h6 {
+    font-size: 0.95rem;
+  }
+
+  .work-experience-card ul li {
+    font-size: 0.75rem;
+  }
+}

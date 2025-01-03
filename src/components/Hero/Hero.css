@@ -1,0 +1,314 @@
+/* Animations */
+@keyframes mainHeroColorChange {
+  0%, 35% {
+    background: #a18cf9;
+  }
+  90%, 100% {
+    background: rgb(0, 255, 255);
+  }
+}
+
+@keyframes mainHeroBorderColorChange {
+  0%, 35% {
+    border-color: #8467fa;
+  }
+  90%, 100% {
+    border-color: aqua;
+  }
+}
+
+@keyframes mainSkillCardColorChange {
+  0%, 35% {
+    color: #8467fa;
+  }
+  90%, 100% {
+    color: aqua;
+  }
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* Moves slightly up */
+  }
+  100% {
+    transform: translateY(0); /* Returns to the original position */
+  }
+}
+
+
+/* Hero Section Styling */
+.hero-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.hero-container::after,
+.hero-container::before {
+  content: " ";
+  width: 28.125rem;
+  height: 28.125rem;
+  border-radius: 28.125rem;
+  background: #7c66e3;
+  animation: mainHeroColorChange 7s infinite alternate;
+  position: absolute;
+  z-index: -1;
+  opacity: 0.3;
+  filter: blur(60px);
+  -webkit-filter: blur(60px);
+}
+
+.hero-container::after {
+  top: -3rem;
+  left: -5rem;
+}
+
+.hero-container::before {
+  bottom: 2rem;
+  right: 0rem;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-content h2 {
+  font-size: clamp(1rem, 3vw + 1rem, 4rem);
+  font-family: "Source Code Pro", monospace;
+  white-space: nowrap;
+  overflow: hidden; /* Hide overflowing text during animation */
+  display: inline-block;
+}
+
+.hero-content h2 .cursor {
+  border-right: 2px solid white;
+  animation: blink 0.75s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.hero-content h2.highlight .cursor {
+  border-right: 2px solid white;
+}
+
+.hero-content p {
+  width: 80%;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 2rem;
+  margin-top: 1rem;
+}
+
+/* New styling for subtitle to ensure it's applied */
+.hero-content .subtitle {
+  font-size: 1.5rem; /* Adjust the font size as needed */
+  color: #fff;
+  font-weight: 600;
+  margin-top: 1.5rem; /* Add margin to give it space from other elements */
+  text-align: center;
+  font-weight: 400;
+  opacity: 0;
+  transform: translateY(3rem);
+  animation: fadeInUp 2s ease 3.5s forwards, mainSkillCardColorChange 7s infinite alternate;
+}
+
+.hero-img {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 5rem;
+  
+}
+
+.hero-img img.mainimg {
+  animation: float 5s ease-in-out infinite;
+  border-radius:3em;
+}
+
+.hero-img > div {
+  display: flex;
+  align-items: flex-end;
+  gap: 2rem;
+}
+
+.hero-img > div > img {
+  width: 25rem;
+  transition: all 0.3s ease;
+}
+
+.tech-icon {
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 0.65rem;
+  border: 1.5px solid #6852ba;
+  animation: mainHeroBorderColorChange 7s infinite alternate;
+}
+
+.tech-icon img {
+  width: 3rem;
+  height: auto;
+  transition: all 0.3s ease;
+}
+
+.hero-img > div > img:hover,
+.tech-icon img:hover {
+  transform: translateY(-0.5rem);
+}
+
+.flexing {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 2em;
+}
+
+/* Responsive Styling */
+@media (max-width: 1025px) {
+  .hero-content h2 {
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+    line-height: 1.6rem;
+  }
+
+  .hero-img > div > img {
+    width: 20rem;
+  }
+
+  .tech-icon {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .tech-icon img {
+    width: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+  }
+
+  .hero-img {
+    margin: 2rem 0 2rem 0;
+  }
+
+  .hero-container h2 {
+    margin-top: 3rem;
+  }
+
+  .hero-content h2,
+  .hero-content p {
+    width: auto;
+    text-align: center;
+  }
+
+  .hero-container::after,
+  .hero-container::before {
+    width: 18rem;
+    height: 18rem;
+  }
+
+  .hero-container::after {
+    top: 0rem;
+    left: 0rem;
+  }
+
+  .hero-container::before {
+    bottom: 2rem;
+    right: 0rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-content h2 {
+    font-size: 2.2rem;
+    line-height: 3rem;
+  }
+
+  .hero-content p {
+    font-size: 0.8rem;
+    line-height: 1.3rem;
+  }
+
+  .hero-img {
+    gap: 1rem;
+  }
+
+  .hero-img > div {
+    gap: 1rem;
+  }
+
+  .hero-img > div > img {
+    width: 16rem;
+  }
+
+  .tech-icon {
+    width: 3.3rem;
+    height: 3.3rem;
+  }
+
+  .tech-icon img {
+    width: 2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-content h2 {
+    font-size: 2rem;
+    line-height: 2.7rem;
+  }
+
+  .hero-content p {
+    font-size: 0.75rem;
+    line-height: 1.2rem;
+  }
+
+  .hero-img {
+    gap: 1rem;
+  }
+
+  .hero-img > div {
+    gap: 1rem;
+  }
+
+  .hero-img > div > img {
+    width: 14rem;
+  }
+
+  /* Fix for subtitle font-size */
+  .hero-content .subtitle {
+    font-size: 1.5rem; /* Corrected value */
+  }
+
+  .tech-icon {
+    width: 3.1rem;
+    height: 3.1rem;
+  }
+
+  .tech-icon img {
+    width: 1.8rem;
+  }
+}

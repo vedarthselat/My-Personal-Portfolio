@@ -1,0 +1,76 @@
+.containp {
+  margin-top: 76px;
+  position: relative; /* Added for positioning ::after */
+}
+
+@keyframes mainExpcBackgroundTimeColorChange {
+  0%, 35% {
+    background-color: #7c66e3;
+  }
+  90%, 100% {
+    background-color: aqua;
+  }
+}
+
+.containp::after,
+.containp::before {
+  content: " ";
+  width: 28.125rem;
+  height: 28.125rem;
+  border-radius: 28.125rem;
+  background: #7c66e3;
+  animation: mainExpcBackgroundTimeColorChange 7s infinite alternate;
+  position: absolute;
+  z-index: -1;
+  opacity: 0.3;
+  filter: blur(60px);
+  -webkit-filter: blur(60px);
+}
+
+.containp::after {
+  top:3em;
+  left: 5rem;
+}
+
+.containp::before {
+  bottom: 10em;
+  left: 5rem;
+}
+
+.title {
+  font-size: 35px;
+  font-weight: 700;
+  letter-spacing: 1.75px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.projects {
+  margin: 0;
+  font-size: 1em;
+  margin-top: 37px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns on larger screens */
+  gap: 2rem;
+  justify-items: center;
+  align-content: center;
+  width: 100%;
+  padding: 0 1rem;
+  margin-bottom: 5em;
+}
+
+/* Responsive adjustments for smaller screens (max-width: 768px) */
+@media (max-width: 1000px) {
+  .projects {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    gap: 1.5rem; /* Slightly smaller gap for small screens */
+  }
+}
+
+@media (max-width: 620px) {
+  .projects {
+    grid-template-columns: 1fr; /* 1 column for very small screens */
+    gap: 1em; /* Smaller gap for very small screens */
+
+  }
+}

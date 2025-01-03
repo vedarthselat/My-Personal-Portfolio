@@ -1,0 +1,32 @@
+[
+  {
+    "title": "My Personal Portfolio",
+    "imageSrc" : "./assets/images/sample_portfolio.jpeg",
+    "description" : "I created my personal portfolio from scratch using React JS, CSS and JavaScript. This portfolio(which you are currently viewing right now) highlights my skills, work experience, projects and all my awards and achievements. This project helped me further strengthen my skills in React for building dynamic and interactive web interfaces, gain deeper insights into responsive design using CSS, ensuring the portfolio looks great on any device, and enhance my proficiency in JavaScript.",
+    "skills" : ["React", "CSS", "JavaScript"],
+    "source" : "https://github.com/vedarthselat/My-Personal-Portfolio.git"
+  },
+    {
+      "title": "Talking Hands - American Sign Language Translator",
+      "imageSrc": "./assets/images/ASLimage.jpeg",
+      "description": "An innovative app designed to bridge the communication gap for the deaf community by converting sign language into text in real-time. Created during the HackTrent Hackathon using TensorFlow, HTML, CSS and JavaScript, this project focuses on empowering inclusivity by enabling seamless interaction between individuals who use sign language and those who don’t understand it.",
+      "skills": ["HTML5", "CSS", "JavaScript", "TensorFlow", "MongoDB", "Python"],
+      "source": "https://github.com/vedarthselat/Sign-Language-Detection---Talking-Hands"
+    },
+    
+    {
+        "title": "Game Simulation Using C# DSA and Linear Algebra",
+        "imageSrc": "./assets/images/GameSimulation.jpeg",
+        "description": "I developed a program that uses ArrayLists to manage and simulate the interactions between different animals: cats(mentioned in the simulation as C), snakes(mentioned in the simulation as S), and birds(mentioned in the simulation as B). It combines two lists, displays the animals in both forward and reverse order, and tracks their movements in a 2D space. The cats and snakes chase birds, eating them based on their range and speed, with movement calculated using basic linear algebra.",
+        "skills": ["C#", "Data Structures", "Algorithms", "OOPS", "Linear Algebra"],
+        "source": "https://github.com/vedarthselat/Game-Simulation"
+      },
+      {
+        "title": "Sample Resume and Portfolio",
+        "imageSrc": "./assets/images/SampleResume.jpeg",
+        "description": "I created a sample resume and portfolio from scratch using HTML, CSS, Markdown, Git and GitHub. The resume is based on a resume design taken from the internet and the portfolio is my own design. Both the resume and portfolio are slightly interactive which is achieved from CSS.",
+        "skills": ["HTML5", "CSS", "Markdown", "Git", "GitHub"],
+        "source": "https://github.com/vedarthselat/SampleResume"
+      }
+      
+  ]

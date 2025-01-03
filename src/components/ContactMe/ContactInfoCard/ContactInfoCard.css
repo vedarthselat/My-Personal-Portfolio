@@ -1,0 +1,81 @@
+@keyframes mainExpBorderColorChange {
+  0%, 35% {
+    border-color: #8467fa;
+  }
+  90%, 100% {
+    border-color: aqua;
+  }
+}
+
+@keyframes mainExpBackgroundTimeColorChange {
+  0%, 35% {
+    background-color: #4a3a8b;
+  }
+  90%, 100% {
+    background-color: rgb(0, 188, 188);
+  }
+}
+
+@keyframes mainExplBackgroundTimeColorChange {
+  0%, 35% {
+    background-color: #634eb6;
+  }
+  90%, 100% {
+    background-color: rgb(2, 216, 216);
+  }
+}
+
+.contact-details-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #130f2a;
+  border-radius: 0.65rem;
+  border: 1.5px solid #6751b9;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  animation: 
+    mainExpBackgroundDarkColorChange 7s infinite alternate, 
+    mainExpBorderColorChange 7s infinite alternate;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for the card */
+.contact-details-card:hover {
+  transform: translateY(-10px); /* Slight lift effect */
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.3), 0px 10px 15px rgba(0, 0, 0, 0.2); /* Box shadow effect */
+}
+
+/* Icon styles */
+.contact-details-card .icon {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  background: #3d3072;
+  animation: 
+    mainExplBackgroundTimeColorChange 7s infinite alternate;
+  margin-bottom: 0.8rem;
+}
+
+.icon img {
+  color: white;
+  width: 1.8rem;
+  height: auto;
+  object-fit: contain;
+}
+
+.contact-details-card p {
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+@media (max-width: 400px) {
+  .contact-details-card p {
+    font-size: 0.8rem;
+  }
+}
